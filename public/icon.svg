@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1021" />
+      <stop offset="50%" stop-color="#070a14" />
+      <stop offset="100%" stop-color="#03050a" />
+    </linearGradient>
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <linearGradient id="violetGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="url(#neonCyan)" stroke-width="2" stroke-opacity="0.3" />
+
+  <!-- Ambient Glow -->
+  <circle cx="256" cy="256" r="180" fill="url(#centerGlow)" />
+
+  <!-- Outer Orbit Rings -->
+  <ellipse cx="256" cy="256" rx="190" ry="85" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="14 10" transform="rotate(-25 256 256)" opacity="0.4" />
+  <ellipse cx="256" cy="256" rx="190" ry="85" fill="none" stroke="#818cf8" stroke-width="3" stroke-dasharray="8 8" transform="rotate(35 256 256)" opacity="0.3" />
+
+  <!-- Central Stylized 'T' with neural diamond core -->
+  <g filter="url(#glow)">
+    <!-- Top Horizontal Bar of 'T' -->
+    <path d="M128 156 C128 144 140 136 156 136 L356 136 C372 136 384 144 384 156 C384 168 372 176 356 176 L156 176 C140 176 128 168 128 156 Z" fill="url(#neonCyan)" />
+    
+    <!-- Top Bar Accent winglets -->
+    <polygon points="120,156 136,140 136,172" fill="#38bdf8" />
+    <polygon points="392,156 376,140 376,172" fill="#818cf8" />
+
+    <!-- Vertical Stem of 'T' tapering gracefully -->
+    <path d="M228 180 L284 180 L274 340 C272 364 256 378 256 378 C256 378 240 364 238 340 Z" fill="url(#violetGlow)" />
+
+    <!-- Glowing Core Diamond (AI Spark) -->
+    <polygon points="256,190 286,230 256,270 226,230" fill="#ffffff" opacity="0.95" />
+    <polygon points="256,202 276,230 256,258 236,230" fill="#06b6d4" />
+
+    <!-- Orbital Energy Nodes -->
+    <circle cx="256" cy="405" r="9" fill="#38bdf8" />
+    <circle cx="160" cy="256" r="6" fill="#818cf8" />
+    <circle cx="352" cy="256" r="6" fill="#38bdf8" />
+  </g>
+</svg>

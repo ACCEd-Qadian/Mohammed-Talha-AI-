@@ -1,0 +1,11 @@
+{
+  "name": "TALHA AI",
+  "description": "TALHA AI — Your Intelligent AI Companion created by MOHAMMED TALHA. Multilingual, versatile reasoning, image generation, voice, and instant knowledge.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
